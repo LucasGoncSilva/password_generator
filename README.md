@@ -10,7 +10,7 @@
 
 <!-- :construction: Em andamento :construction: -->
 
-<!-- :link: Confira [aqui](website). :link: -->
+:link: Confira [aqui](https://gerarsenhas.vercel.app/). :link:
 <br>
 
 <h2>Tecnologias aplicadas :floppy_disk: :cloud: </h2>
@@ -56,7 +56,7 @@ Clone o repositório e acesse a pasta criada para ele
 ```cmd
 git clone git@github.com:LucasGoncSilva/password_generator.git
 
-cd 
+cd password_generator
 ```
 
 Instale as dependencias do projeto (neste caso apenas o electron)
