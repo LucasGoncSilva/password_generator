@@ -9,7 +9,7 @@ app.on('ready', () => {
         height: 500,
         resizable: false,
         autoHideMenuBar: true,
-        icon: __dirname + '/icon.ico'
+        icon: __dirname + '/assets/img/icon.ico'
     })
 
     mainWindow.loadURL(`file://${__dirname}/index.html`)

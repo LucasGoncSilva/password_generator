@@ -2,82 +2,19 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-        :root {
-            --main_color: #fff;
-            --secundary_color: #0d004e;
-            --accent_color_1: #4717f6;
-            --accent_color_2: #b4a0fc;
-        }
-
-        * {
-            margin: 0;
-        }
-
-        html {
-            font: 400 20px 'Roboto', sans-serif;
-            background: var(--main_color);
-            color: var(--secundary_color);
-            text-align: center;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 {
-            margin: 10px auto 20px;
-        }
-
-        form {
-            accent-color: var(--secundary_color);
-        }
-
-        fieldset {
-            border: solid var(--accent_color_1);
-            border-radius: 15px 15px 45px 45px;
-            width: fit-content;
-            padding: 20px;
-        }
-
-        input[type=number] {
-            margin-bottom: 10px;
-        }
-
-        div {
-            margin: auto;
-            text-align: left;
-            max-width: fit-content;
-        }
-
-        input[type=submit] {
-            font: 400 20px 'Roboto', sans-serif;
-            background-color: var(--accent_color_2);
-            border: 1px solid var(--accent_color_1);
-            border-radius: 4px;
-            color: var(--secundary_color);
-            padding: 16px 60px;
-            text-decoration: none;
-            margin: 30px auto 10px;
-            cursor: pointer;
-        }
-
-        span {
-            margin-top: 15px;
-        }
-    </style>
-
-    <link rel="icon" href="icon.svg">
-
     <title>Gerador de Senhas</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/script.js"></script>
+
+    <link rel="shortcut icon" href="/assets/img/icon.svg" type="image/x-icon">
+
+
 </head>
 
 <body>
@@ -112,75 +49,7 @@
 
     <span>(A senha gerada aparecerá aqui)</span>
 
-
-    <script>
-
-        function generatePass(chcks) {
-
-            let pass = ''
-            let elems = []
-
-            const passLength = document.querySelector('#length').value
-
-            const lower = 'abcdefghijklmnopqrstuvwxyz'
-            const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-            const number = '0123456789'
-            const symbol = '?!@#$%&*(){};'
-
-            chcks.forEach(chck => {
-                elems.push(chck.dataset.code)
-            })
-
-            for (let i = 0; i < passLength; i++) {
-
-                let charType = Number(elems[Math.floor(Math.random() * elems.length)])
-                let randomNum
-
-                switch (charType) {
-                    case 0:
-                        randomNum = Math.floor(Math.random() * lower.length)
-                        pass += lower.substring(randomNum, randomNum + 1)
-                        break;
-
-                    case 1:
-                        randomNum = Math.floor(Math.random() * upper.length)
-                        pass += upper.substring(randomNum, randomNum + 1)
-                        break;
-
-                    case 2:
-                        randomNum = Math.floor(Math.random() * number.length)
-                        pass += number.substring(randomNum, randomNum + 1)
-                        break;
-
-                    case 3:
-                        randomNum = Math.floor(Math.random() * symbol.length)
-                        pass += symbol.substring(randomNum, randomNum + 1)
-                        break;
-                }
-
-            }
-
-            document.querySelector('span').innerText = pass
-
-        }
-
-        document.querySelector('form').onsubmit = () => {
-
-            const chcks = document.querySelectorAll('input[type="checkbox"]:checked')
-
-            if (chcks.length === 0) { window.alert('Selecione os caractéres que deseja utilizar.'); return false }
-
-            generatePass(chcks)
-
-            // chcks.forEach((chck)=>{
-            //     console.log(chck.name)
-            // })
-
-            return false
-
-        }
-
-    </script>
+    <img src="assets/img/icon.svg" alt="icon">
 
 </body>
 
